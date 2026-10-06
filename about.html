@@ -3,18 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于我 - 谢嘉裕</title>
-    <link rel="stylesheet" href="style.css">
+    <title>自我介绍</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+        body{
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+        }
+        .card{
+            background:#fff;
+            border-radius:20px;
+            padding:30px;
+            max-width:420px;
+            width:100%;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity:0; transform: translateY(15px);}
+            to {opacity:1; transform: translateY(0);}
+        }
+        h2{color:#1e40af;margin-bottom:16px;text-align:center;}
+        p{color:#333;line-height:1.7;font-size:16px;}
+        .back, .gameBtn{
+            display:block;
+            text-decoration:none;
+            background:#3b82f6;
+            color:white;
+            text-align:center;
+            padding:12px;
+            border-radius:12px;
+            margin-top:16px;
+            transition:0.2s;
+        }
+        .back:hover,.gameBtn:hover{background:#1d4ed8;transform:scale(1.03);}
+        .gameBtn{
+            background:#0284c7;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>关于我</h1>
-        <div class="info-card">
-            <p><strong>姓名：</strong>谢嘉裕</p>
-            <p><strong>爱好：</strong>编程</p>
-            <p><strong>座右铭：</strong>道阻且长，行则将至。</p>
-        </div>
-        <a href="index.html" class="btn back-btn">返回首页</a>
+    <div class="card">
+        <h2>自我介绍</h2>
+        <p>大家好，我是谢嘉裕，喜欢探索编程，乐于学习新知识。</p>
+        <!-- 新增跳转到猜数字游戏的按钮 -->
+        <a href="game.html" class="gameBtn">🎮 进入猜数字游戏</a>
+        <a href="index.html" class="back">返回主页</a>
     </div>
 </body>
 </html>
