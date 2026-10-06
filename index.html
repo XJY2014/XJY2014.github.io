@@ -3,20 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>谢嘉裕 | 个人主页</title>
-    <link rel="stylesheet" href="style.css">
+    <title>谢嘉裕的主页</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+        body{
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+        }
+        .card{
+            background:#ffffff;
+            border-radius:20px;
+            padding:30px;
+            text-align:center;
+            box-shadow:0 8px 24px rgba(0,0,0,0.15);
+            max-width:420px;
+            width:100%;
+            /* 淡入动画 */
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity:0; transform: translateY(15px);}
+            to {opacity:1; transform: translateY(0);}
+        }
+        .avatar{
+            width:140px;
+            height:140px;
+            border-radius:50%;
+            object-fit:cover;
+            border:4px solid #3b82f6;
+            margin-bottom:16px;
+        }
+        h1{color:#1e40af;margin-bottom:10px;font-size:28px;}
+        p{color:#475569;margin-bottom:26px;font-size:16px;}
+        .btn{
+            display:block;
+            text-decoration:none;
+            background:#3b82f6;
+            color:white;
+            padding:14px;
+            border-radius:12px;
+            margin:12px 0;
+            font-size:17px;
+            transition:0.2s;
+        }
+        .btn:hover{background:#1d4ed8;transform:scale(1.03);}
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>你好，我是谢嘉裕</h1>
-        <p class="subtitle">欢迎来到我的个人网站</p>
-        <div class="avatar-box">
-            <!-- 你的头像文件 avatar.jpg -->
-            <img src="avatar.jpg" alt="谢嘉裕头像" class="avatar">
-        </div>
-        <div class="btn-group">
-            <button onclick="window.location.href='/about.html'">查看自我介绍</button>
-        </div>
+    <div class="card">
+        <!-- 修改这里，换成你的头像文件名 -->
+        <img class="avatar" src="avatar.png" alt="头像">
+        <h1>谢嘉裕</h1>
+        <p>热爱编程 | 持续学习</p>
+        <a href="about.html" class="btn">查看自我介绍</a>
+        <a href="hobby.html" class="btn">我的爱好</a>
     </div>
 </body>
 </html>
