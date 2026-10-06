@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字游戏</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            background-color: #e8f4ff;
+        }
+        .container{
+            /* 淡入动画 */
+            animation: fadeIn 0.8s ease-in-out;
+            max-width: 500px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px #94c8f0;
+            border: 2px solid #63a8e8;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0px); }
+        }
+        h1{
+            color: #226bb8;
+            margin-bottom:20px;
+        }
+        p{
+            color:#3377b9;
+            margin:12px 0;
+            font-size:17px;
+        }
+        input{
+            padding:10px;
+            width: 180px;
+            border:2px solid #73b4ec;
+            border-radius:8px;
+            font-size:18px;
+            outline:none;
+        }
+        input:focus{
+            border-color:#226bb8;
+        }
+        button{
+            background-color:#3489d8;
+            color:white;
+            border:none;
+            padding:11px 24px;
+            border-radius:8px;
+            font-size:17px;
+            margin:10px 6px;
+            cursor:pointer;
+            transition: all 0.3s;
+        }
+        button:hover{
+            background-color:#226bb8;
+        }
+        #tip{
+            font-weight:bold;
+            font-size:19px;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔵 猜数字游戏</h1>
+        <p>我已经想好一个 1～100 的数字，你来猜猜看！</p>
+        <input type="number" id="numInput" placeholder="输入数字" min="1" max="100">
+        <br>
+        <button onclick="check()">提交猜测</button>
+        <button onclick="restart()">重新开始</button>
+        <p>剩余次数：<span id="count">7</span></p>
+        <p id="tip"></p>
+        <br>
+        <a href="index.html">
+            <button style="background:#609cd8;">返回主页</button>
+        </a>
+    </div>
+
+    <script>
+        // 随机生成1~100数字
+        let answer = Math.floor(Math.random() * 100) + 1;
+        let remain = 7;
+        const tipDom = document.getElementById('tip');
+        const countDom = document.getElementById('count');
+
+        function check(){
+            let val = document.getElementById('numInput').value;
+            if(!val || val <1 || val>100){
+                tipDom.innerText = "请输入1到100之间的数字！";
+                tipDom.style.color="#195894";
+                return;
+            }
+            remain--;
+            countDom.innerText = remain;
+
+            if(val < answer){
+                tipDom.innerText = "太小啦！再试试更大的数";
+                tipDom.style.color="#226bb8";
+            }else if(val > answer){
+                tipDom.innerText = "太大啦！试试更小一点";
+                tipDom.style.color="#226bb8";
+            }else{
+                tipDom.innerText = `🎉恭喜！猜对啦！答案就是${answer}`;
+                tipDom.style.color="#007722";
+                return;
+            }
+            if(remain <= 0){
+                tipDom.innerText = `游戏结束！答案是${answer}`;
+                tipDom.style.color="#bb2222";
+            }
+        }
+        function restart(){
+            answer = Math.floor(Math.random() * 100) + 1;
+            remain =7;
+            countDom.innerText = remain;
+            tipDom.innerText = "";
+            document.getElementById('numInput').value = "";
+        }
+    </script>
+</body>
+</html>
