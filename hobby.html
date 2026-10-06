@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的爱好</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+        body{
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+        }
+        .card{
+            background:#fff;
+            border-radius:20px;
+            padding:30px;
+            max-width:420px;
+            width:100%;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity:0; transform: translateY(15px);}
+            to {opacity:1; transform: translateY(0);}
+        }
+        h2{color:#1e40af;margin-bottom:16px;text-align:center;}
+        p{color:#333;line-height:1.7;font-size:16px;}
+        .back{
+            display:block;
+            text-decoration:none;
+            background:#3b82f6;
+            color:white;
+            text-align:center;
+            padding:12px;
+            border-radius:12px;
+            margin-top:24px;
+            transition:0.2s;
+        }
+        .back:hover{background:#1d4ed8;transform:scale(1.03);}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>我的爱好</h2>
+        <p>爱好：编程，喜欢动手写代码搭建网页，探索有趣的技术。</p>
+        <a href="index.html" class="back">返回主页</a>
+    </div>
+</body>
+</html>
