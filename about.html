@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自我介绍</title>
+    <title>关于我</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
         body{
@@ -20,38 +20,54 @@
             padding:30px;
             max-width:420px;
             width:100%;
-            animation: fadeIn 0.8s ease-in-out;
+            text-align:center;
         }
-        @keyframes fadeIn {
-            from {opacity:0; transform: translateY(15px);}
-            to {opacity:1; transform: translateY(0);}
+        h2{color:#1e40af;margin-bottom:16px;}
+        p{color:#333;line-height:1.7;font-size:16px;margin-bottom:12px;}
+        .avatar{
+            width:140px;
+            height:140px;
+            border-radius:50%;
+            object-fit:cover;
+            border:4px solid #93c5fd;
+            margin-bottom:16px;
         }
-        h2{color:#1e40af;margin-bottom:16px;text-align:center;}
-        p{color:#333;line-height:1.7;font-size:16px;}
-        .back, .gameBtn{
-            display:block;
-            text-decoration:none;
+        .btn{
+            width:100%;
             background:#3b82f6;
             color:white;
-            text-align:center;
-            padding:12px;
+            padding:14px;
             border-radius:12px;
-            margin-top:16px;
+            border:none;
+            font-size:17px;
+            margin:8px 0;
             transition:0.2s;
+            cursor:pointer;
         }
-        .back:hover,.gameBtn:hover{background:#1d4ed8;transform:scale(1.03);}
-        .gameBtn{
-            background:#0284c7;
+        .btn:hover{background:#1d4ed8;transform:scale(1.02);}
+        .back-home{
+            background:#64748b;
+        }
+        .game-btn{
+            background:#059669;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h2>自我介绍</h2>
-        <p>大家好，我是谢嘉裕，喜欢探索编程，乐于学习新知识。</p>
-        <!-- 新增跳转到猜数字游戏的按钮 -->
+        <!-- 这里src改成你的头像文件名，比如 src="avatar.jpg" -->
+        <img class="avatar" src="avatar.jpg" alt="头像">
+        <h2>谢嘉裕</h2>
+        <p>热爱编程，喜欢写有趣的小网页程序</p>
+
+        <!-- 返回主页（同仓库，短链接） -->
+        <a href="index.html">
+            <button class="btn back-home">🏠 返回主页</button>
+        </a>
         <a href="https://XJY2014.github.io/game/game.html">
-        <a href="index.html" class="back">返回主页</a>
+            <button class="btn game-btn">🎮 猜数字游戏</button>
+        </a>
+
     </div>
 </body>
 </html>
