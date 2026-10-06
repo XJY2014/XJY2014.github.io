@@ -5,69 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:system-ui, sans-serif;
+        }
         body{
-            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            background-color:#e8f2ff;
+            color:#003366;
+            /* 页面淡入效果 */
+            animation: fadeIn 0.8s ease-in-out;
             min-height:100vh;
             display:flex;
+            flex-direction:column;
             align-items:center;
             justify-content:center;
             padding:20px;
         }
-        .card{
-            background:#fff;
-            border-radius:20px;
-            padding:30px;
-            max-width:420px;
-            width:100%;
+        @keyframes fadeIn{
+            from{opacity:0;}
+            to{opacity:1;}
+        }
+        .box{
+            background:#ffffff;
+            padding:35px;
+            border-radius:16px;
+            box-shadow: 0 4px 12px #b8d8ff;
             text-align:center;
         }
-        h2{color:#1e40af;margin-bottom:16px;}
-        p{color:#333;line-height:1.7;font-size:16px;margin-bottom:12px;}
-        .avatar{
-            width:140px;
-            height:140px;
-            border-radius:50%;
-            object-fit:cover;
-            border:4px solid #93c5fd;
+        h1{
+            color:#0055aa;
             margin-bottom:16px;
         }
-        .btn{
-            width:100%;
-            background:#3b82f6;
-            color:white;
-            padding:14px;
-            border-radius:12px;
-            border:none;
+        p{
             font-size:17px;
-            margin:8px 0;
-            transition:0.2s;
+            margin-bottom:28px;
+            line-height:1.6;
+        }
+        .btn{
+            display:block;
+            width:220px;
+            margin:12px auto;
+            padding:14px;
+            background:#0066cc;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:16px;
             cursor:pointer;
+            text-decoration:none;
+            transition: 0.3s;
         }
-        .btn:hover{background:#1d4ed8;transform:scale(1.02);}
-        .back-home{
-            background:#64748b;
-        }
-        .game-btn{
-            background:#059669;
+        .btn:hover{
+            background:#004d99;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <!-- 这里src改成你的头像文件名，比如 src="avatar.jpg" -->
-        <img class="avatar" src="avatar.jpg" alt="头像">
-        <h2>谢嘉裕</h2>
-        <p>热爱编程，喜欢写有趣的小网页程序</p>
-
-        <!-- 返回主页（同仓库，短链接） -->
-        <a href="index.html">
-            <button class="btn back-home">🏠 返回主页</button>
-        </a>
-        <a href="https://XJY2014.github.io/game/game.html">
-            <button class="btn game-btn">🎮 猜数字游戏</button>
-        </a>
-
+    <div class="box">
+        <h1>关于 XJY2014</h1>
+        <p>你好！我是XJY2014，喜欢编程，乐于探索网页制作。</p>
+        <a href="./index.html" class="btn">返回主页</a>
+        <a href="./game.html" class="btn">猜数字游戏</a>
     </div>
 </body>
 </html>
